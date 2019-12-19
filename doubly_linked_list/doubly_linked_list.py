@@ -67,7 +67,11 @@ class DoublyLinkedList:
     current head's next node the new head of the List.
     Returns the value of the removed Node."""
     def remove_from_head(self):
-        pass
+        
+        
+        value = self.head.value
+        self.delete(self.head)
+        return value
 
     """Wraps the given value in a ListNode and inserts it 
     as the new tail of the list. Don't forget to handle 
@@ -88,22 +92,54 @@ class DoublyLinkedList:
     current tail's previous node the new tail of the List.
     Returns the value of the removed Node."""
     def remove_from_tail(self):
-        pass
+        value = self.tail.value
+        self.delete(self.tail)
+        return value
 
     """Removes the input node from its current spot in the 
     List and inserts it as the new head node of the List."""
     def move_to_front(self, node):
-        pass
+        # mode is head
+        if node is self.head:
+            return
+        value = node.value
+        self.delete(node)
+        self.add_to_head(value)
+
 
     """Removes the input node from its current spot in the 
     List and inserts it as the new tail node of the List."""
     def move_to_end(self, node):
-        pass
+                # mode is tail
+        if node is self.tail:
+            return
+        value = node.value
+        self.delete(node)
+        self.add_to_tail(value)
 
     """Removes a node from the list and handles cases where
     the node was the head or the tail"""
     def delete(self, node):
-        pass
+        # empty
+        if not self.head and not self.tail:
+            return
+        # only one item 
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+            self.length -=1
+
+        elif self.head == node:
+            self.head = node
+            self.length -=1    
+            node.delete()
+        else:
+            self.length -= 1
+            node.delete()
+
+
+        # 
+        node.delete() 
         
     """Returns the highest value currently in the list"""
     def get_max(self):
