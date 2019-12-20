@@ -124,32 +124,40 @@ class DoublyLinkedList:
     current tail's previous node the new tail of the List.
     Returns the value of the removed Node."""     
     def remove_from_tail(self):
-        # if self.tail is None:
-        #     return
+    #     if self.tail is None:
+    #         return
 
-        # tail_node_to_remove = self.tail
-        # new_tail = tail_node_to_remove.prev
-        # # move head pointer to the next value
-        # self.tail= new_tail
-        # # sever the connection to tail_node_to_remove
-        # tail_node_to_remove.prev = None
-        # self.length -= 1
+    #     tail_node_to_remove = self.tail
+    #     new_tail = tail_node_to_remove.prev
+    #     # move head pointer to the next value
+    #     self.tail= new_tail
+    #     # sever the connection to tail_node_to_remove
+    #     tail_node_to_remove.prev = None
+    #     self.length -= 1
 
-        # if self.head is None:
-        #     self.tail = None
-        # else:
-        #     self.tail.next = None  # original
+    #     if self.head is None:
+    #         self.tail = None
+    #     else:
+    #         # self.tail.next = None  # original NOPE
+    #         # self.tail = new_tail.next  # original NOPE
 
+    #     #val = tail_node_to_remove.value
+    #     # del node_to_remove
 
-        # val = tail_node_to_remove.value
-        # # del node_to_remove
-
-        # return val
+    #     return val
 
         # THIS WORKS BETTER, something buggy above from lecture code LINE 141
         value = self.tail.value
         self.delete(self.tail)
         return value
+
+
+    # def delete(self):
+    #     if self.prev:
+    #         self.prev.next = self.next
+    #     if self.next:
+    #         self.next.prev = self.prev
+
 
     """Removes the input node from its current spot in the 
     List and inserts it as the new head node of the List."""
