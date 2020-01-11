@@ -25,13 +25,13 @@ class Stack:
     def len(self):
         return self.size
 
-st = Stack()
-st.push(100)
-st.push(101)
-st.push(105)
-print(st.len())
-print(st.pop())
-print(st.len())
+# st = Stack()
+# st.push(100)
+# st.push(101)
+# st.push(105)
+# print(st.len())
+# print(st.pop())
+# print(st.len())
 
     #    self.s.push(100)
     #     self.s.push(101)

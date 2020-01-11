@@ -213,13 +213,14 @@ class DoublyLinkedList:
         return max_val
 
 
-# dll = DoublyLinkedList()
+dll = DoublyLinkedList()
+dll.get_max()
 
 # dll.add_to_head(10)
 # dll.add_to_head(20)
 # dll.add_to_head(-10)
-# print(dll)
-# len(dll)
+print(dll)    # gives obj <__main__.DoublyLinkedList object at 0x1093c1970>
+#len(dll)
 # print(dll.remove_from_head())
 # print(dll)
 # len(dll)
